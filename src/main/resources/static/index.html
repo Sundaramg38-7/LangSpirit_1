@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Language Learning Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN / REGISTER -->
+<div id="authView" class="auth-wrap">
+  <div class="card auth-card">
+    <h1 id="brand">Language Platform</h1>
+    <p class="muted">Learn new languages with interactive lessons</p>
+
+    <div class="tabs">
+      <button id="tabLogin" class="tab active" onclick="switchAuth('login')">Login</button>
+      <button id="tabRegister" class="tab" onclick="switchAuth('register')">Register</button>
+    </div>
+
+    <div id="registerOnly" class="hidden">
+      <label>Name</label>
+      <input id="regName" placeholder="Your name">
+    </div>
+    <label>Email</label>
+    <input id="authEmail" type="email" placeholder="you@example.com">
+    <label>Password</label>
+    <input id="authPassword" type="password" placeholder="Password">
+    <button class="btn full" onclick="submitAuth()">Continue</button>
+    <p id="authMsg" class="msg"></p>
+
+    <div class="demo">
+      <b>Demo accounts</b><br>
+      Admin: admin@demo.com / admin123<br>
+      Instructor: instructor@demo.com / teach123<br>
+      Learner: learner@demo.com / learn123
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="appView" class="hidden">
+  <header>
+    <div class="logo" id="appBrand">Language Platform</div>
+    <div class="user-info">
+      <span id="userLabel"></span>
+      <button class="btn small outline" onclick="logout()">Logout</button>
+    </div>
+  </header>
+  <nav id="menu"></nav>
+  <main>
+    <div id="notice" class="msg"></div>
+    <div id="content"></div>
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
